@@ -9,13 +9,11 @@ jobs:
     - image: cimg/go:1.17
     steps:
       - setup_remote_docker
-      - checkout:
-          path: workspace/repository
+      - checkout
       - run:
           name: Build image
           command: |
             make docker/build
-            cd ~/tmp/workspace/repository
   push-image:
     docker:
     - image: cimg/go:1.17
@@ -24,13 +22,11 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - setup_remote_docker
-      - checkout:
-          path: workspace/repository
+      - checkout
       - run:
           name: Build image
           command: |
             make docker/build
-            cd ~/tmp/workspace/repository
 workflows:
   version: 2
   build-image:
