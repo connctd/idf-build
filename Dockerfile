@@ -23,6 +23,4 @@ RUN echo ". /esp/esp-idf/export.sh" >> ~/.bashrc
 VOLUME ["/source"]
 WORKDIR /source
 
-LABEL com.circleci.preserve-entrypoint=true
-
 ENTRYPOINT ["/bin/bash", "-i", "-c"]
