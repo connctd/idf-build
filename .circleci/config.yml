@@ -42,6 +42,8 @@ workflows:
             - build-image
           filters:
             tags:
-              only: /^.*/
+              only: /^v.*/
+            branches:
+              ignore: /.*/
           context:
           - docker_hub
