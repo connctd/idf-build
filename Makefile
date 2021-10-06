@@ -14,3 +14,4 @@ docker/build:
 
 docker/push:
 	docker push "$(DOCKER_REPO):$(VERSION)"
+	docker push "$(DOCKER_REPO):latest"
